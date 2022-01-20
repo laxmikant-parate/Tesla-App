@@ -13,7 +13,11 @@ import CustomisingCarScreen from "./app/screens/CustomisingCarScreen";
 const Stack = createStackNavigator();
 const StackNavigator = () => (
   <Stack.Navigator>
-    <Stack.Screen name="HomeScreen" component={HomeScreen} />
+    <Stack.Screen
+      name="HomeScreen"
+      component={HomeScreen}
+      options={{ headerShown: false }}
+    />
     <Stack.Screen name="AboutMeScreen" component={AboutMeScreen} />
     <Stack.Screen name="PaymentScreen" component={PaymentScreen} />
     <Stack.Screen name="LearnMoreScreen" component={LearnMoreScreen} />
