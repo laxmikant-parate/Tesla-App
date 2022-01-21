@@ -1,21 +1,103 @@
-import { Button, StyleSheet, Text, View } from "react-native";
 import React from "react";
-import { useNavigation } from "@react-navigation/native";
+import {
+  StyleSheet,
+  Text,
+  View,
+  Image,
+  Dimensions,
+  ImageBackground,
+} from "react-native";
+import { useNavigation, useRoute } from "@react-navigation/native";
+
+import learnMoreScreenData from "../api/learnMoreScreenData";
+import SpecsItemList from "../components/SpecsItemList";
+import { ScrollView } from "react-native-gesture-handler";
+import Colors from "../colors/Colors";
+import { Ionicons } from "@expo/vector-icons";
 
 const LearnMoreScreen = () => {
   const navigation = useNavigation();
+  const route = useRoute();
 
   return (
-    <View>
-      <Text>Learn more Screen</Text>
-      <Button
-        title="Customize car"
-        onPress={() => navigation.navigate("AboutMeScreen")}
+    <>
+      <ScrollView>
+        <View style={styles.container}>
+          <Image
+            source={{ uri: learnMoreScreenData[route.params.id].url }}
+            resizeMode="cover"
+            style={styles.image}
+          />
+          <View style={styles.Main}>
+            <View style={styles.textContainer}>
+              <Text style={styles.name}>{route.params.name}</Text>
+            </View>
+            <View style={styles.specsContainer}>
+              <View style={[styles.part, { paddingHorizontal: 30 }]}>
+                <SpecsItemList
+                  data={learnMoreScreenData[route.params.id].specs.part1}
+                />
+              </View>
+              <View style={[styles.part, { paddingRight: 30 }]}>
+                <SpecsItemList
+                  data={learnMoreScreenData[route.params.id].specs.part2}
+                />
+              </View>
+            </View>
+          </View>
+        </View>
+      </ScrollView>
+      <Ionicons
+        name="arrow-back"
+        size={24}
+        color={"#E8EAED"}
+        style={styles.icon}
+        onPress={() => navigation.pop()}
       />
-    </View>
+    </>
   );
 };
 
 export default LearnMoreScreen;
 
-const styles = StyleSheet.create({});
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    alignItems: "center",
+    backgroundColor: Colors.black,
+  },
+  image: {
+    height: 300,
+    width: Dimensions.get("screen").width,
+  },
+  specsContainer: {
+    paddingBottom: 20,
+    backgroundColor: Colors.white,
+    flexDirection: "row",
+  },
+  Main: {
+    width: "100%",
+    borderTopLeftRadius: 40,
+    borderTopRightRadius: 40,
+    overflow: "hidden",
+  },
+  part: {
+    width: "50%",
+  },
+  textContainer: {
+    width: "100%",
+    alignItems: "center",
+    paddingTop: 20,
+    backgroundColor: Colors.white,
+  },
+  name: {
+    fontSize: 24,
+    fontWeight: "bold",
+    color: Colors.black,
+  },
+  icon: {
+    position: "absolute",
+    top: 40,
+    left: 20,
+  },
+});

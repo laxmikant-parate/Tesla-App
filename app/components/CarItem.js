@@ -9,8 +9,11 @@ import {
 
 import AppButton from "./AppButton";
 import Colors from "../colors/Colors";
+import { useNavigation } from "@react-navigation/native";
 
-const CarItem = ({ name, url }) => {
+const CarItem = ({ name, url, id }) => {
+  const navigation = useNavigation();
+
   return (
     <ImageBackground source={{ uri: url }} style={styles.container}>
       <View style={styles.titleContainer}>
@@ -30,6 +33,9 @@ const CarItem = ({ name, url }) => {
           bgColor={Colors.buttonSecondary}
           color={Colors.black}
           title={"learn more"}
+          onPress={() => {
+            navigation.push("LearnMoreScreen", { id, name });
+          }}
         />
       </View>
     </ImageBackground>

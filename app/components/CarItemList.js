@@ -9,7 +9,9 @@ const CarItemList = () => {
     <FlatList
       data={carData}
       keyExtractor={(item) => item.name}
-      renderItem={({ item }) => <CarItem name={item.name} url={item.url} />}
+      renderItem={({ item }) => (
+        <CarItem name={item.name} url={item.url} id={item.id} />
+      )}
       snapToAlignment={"start"}
       decelerationRate={"normal"}
       snapToInterval={Dimensions.get("screen").height}
