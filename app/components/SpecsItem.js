@@ -23,10 +23,12 @@ const styles = StyleSheet.create({
     color: Colors.black,
     fontSize: 15,
     fontWeight: "bold",
+    letterSpacing: 1,
   },
   value: {
     color: Colors.black,
     fontSize: 13,
     fontWeight: "400",
+    letterSpacing: 0.5,
   },
 });

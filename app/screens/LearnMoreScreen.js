@@ -14,6 +14,7 @@ import SpecsItemList from "../components/SpecsItemList";
 import { ScrollView } from "react-native-gesture-handler";
 import Colors from "../colors/Colors";
 import { Ionicons } from "@expo/vector-icons";
+import ExperienceItem from "../components/ExperienceItem";
 
 const LearnMoreScreen = () => {
   const navigation = useNavigation();
@@ -22,6 +23,13 @@ const LearnMoreScreen = () => {
   return (
     <>
       <ScrollView>
+        <Ionicons
+          name="arrow-back"
+          size={24}
+          color={"#E8EAED"}
+          style={styles.icon}
+          onPress={() => navigation.pop()}
+        />
         <View style={styles.container}>
           <Image
             source={{ uri: learnMoreScreenData[route.params.id].url }}
@@ -45,15 +53,9 @@ const LearnMoreScreen = () => {
               </View>
             </View>
           </View>
+          <ExperienceItem url={learnMoreScreenData[route.params.id].url2} />
         </View>
       </ScrollView>
-      <Ionicons
-        name="arrow-back"
-        size={24}
-        color={"#E8EAED"}
-        style={styles.icon}
-        onPress={() => navigation.pop()}
-      />
     </>
   );
 };
@@ -77,8 +79,7 @@ const styles = StyleSheet.create({
   },
   Main: {
     width: "100%",
-    borderTopLeftRadius: 40,
-    borderTopRightRadius: 40,
+    borderRadius: 40,
     overflow: "hidden",
   },
   part: {
@@ -94,8 +95,10 @@ const styles = StyleSheet.create({
     fontSize: 24,
     fontWeight: "bold",
     color: Colors.black,
+    letterSpacing: 1,
   },
   icon: {
+    zIndex: 1,
     position: "absolute",
     top: 40,
     left: 20,
