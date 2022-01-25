@@ -7,7 +7,7 @@ const AboutMeScreen = () => {
 
   return (
     <View>
-      <Text>About me scrreen</Text>
+      <Text>About me screen</Text>
       <Button
         title="Customize car"
         onPress={() => navigation.navigate("LoginSignUpScreen")}
