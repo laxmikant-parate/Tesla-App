@@ -28,6 +28,9 @@ const CarItem = ({ name, url, id }) => {
           color={Colors.white}
           bgColor={Colors.buttonPrimary}
           title={"custom order"}
+          onPress={() => {
+            navigation.push("CustomisingCarScreen", { id, name });
+          }}
         />
         <AppButton
           bgColor={Colors.buttonSecondary}
@@ -68,7 +71,7 @@ const styles = StyleSheet.create({
     letterSpacing: 1,
   },
   subtitle: {
-    fontSize: 16,
+    fontSize: 15,
     fontWeight: "bold",
     color: Colors.lightGrey,
     letterSpacing: 1,
