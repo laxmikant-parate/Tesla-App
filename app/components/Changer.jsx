@@ -42,7 +42,7 @@ export default Changer;
 const styles = StyleSheet.create({
   container: {
     flexDirection: "row",
-    width: "80%",
+    width: "90%",
     backgroundColor: Colors.buttonSecondary,
     paddingVertical: 5,
     paddingHorizontal: 7,
@@ -51,7 +51,7 @@ const styles = StyleSheet.create({
     alignItems: "center",
   },
   changerItem: {
-    paddingVertical: 5,
+    paddingVertical: 7,
     width: "49%",
     borderRadius: 100,
     backgroundColor: "white",
