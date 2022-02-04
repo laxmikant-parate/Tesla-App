@@ -68,13 +68,13 @@ const styles = StyleSheet.create({
     fontSize: 40,
     fontWeight: "bold",
     color: Colors.buttonPrimary,
-    letterSpacing: 1,
+    letterSpacing: 0.5,
   },
   subtitle: {
     fontSize: 15,
     fontWeight: "bold",
     color: Colors.lightGrey,
-    letterSpacing: 1,
+    letterSpacing: 0.5,
   },
   specialSubTitle: {
     textDecorationLine: "underline",

@@ -19,6 +19,7 @@ const CustomisingCarScreen = () => {
   const navigation = useNavigation();
 
   const [selectedItem, setSelectedItem] = useState(1);
+  const [selectedColorItem, setSelectedColorItem] = useState(1);
 
   return (
     <ScrollView>
@@ -100,6 +101,55 @@ const CustomisingCarScreen = () => {
             </TouchableWithoutFeedback>
           </View>
         </View>
+        <Text style={styles.colorText}>Select Color</Text>
+        <View style={styles.selectColorContainer}>
+          <View style={styles.selectColorItem}>
+            <TouchableWithoutFeedback onPress={() => setSelectedColorItem(1)}>
+              <View
+                style={[
+                  styles.colorBorder,
+                  selectedColorItem === 1 ? customBorder11 : customBorder22,
+                ]}
+              >
+                <View
+                  style={[styles.actualColor, { backgroundColor: "#C0C0C0" }]}
+                />
+              </View>
+            </TouchableWithoutFeedback>
+            <Text style={styles.colorPrice}>$1500</Text>
+          </View>
+          <View style={styles.selectColorItem}>
+            <TouchableWithoutFeedback onPress={() => setSelectedColorItem(2)}>
+              <View
+                style={[
+                  styles.colorBorder,
+                  selectedColorItem === 2 ? customBorder11 : customBorder22,
+                ]}
+              >
+                <View
+                  style={[styles.actualColor, { backgroundColor: "#a62c2b" }]}
+                />
+              </View>
+            </TouchableWithoutFeedback>
+            <Text style={styles.colorPrice}>$1500</Text>
+          </View>
+          <View style={styles.selectColorItem}>
+            <TouchableWithoutFeedback onPress={() => setSelectedColorItem(3)}>
+              <View
+                style={[
+                  styles.colorBorder,
+                  selectedColorItem === 3 ? customBorder11 : customBorder22,
+                ]}
+              >
+                <View
+                  style={[styles.actualColor, { backgroundColor: "#2C2C2B" }]}
+                />
+              </View>
+            </TouchableWithoutFeedback>
+            <Text style={styles.colorPrice}>$1500</Text>
+          </View>
+        </View>
+        <View style={styles.selectWheelContainer}></View>
       </View>
     </ScrollView>
   );
@@ -175,10 +225,46 @@ const styles = StyleSheet.create({
     fontWeight: "500",
     letterSpacing: 0.5,
   },
+  colorText: {
+    fontSize: 14,
+    fontWeight: "bold",
+    letterSpacing: 0.5,
+    paddingTop: 30,
+  },
+  colorPrice: {
+    fontSize: 14,
+    fontWeight: "bold",
+    letterSpacing: 0.5,
+    color: Colors.buttonPrimary,
+  },
+  actualColor: {
+    width: 40,
+    height: 40,
+    borderRadius: 20,
+  },
+  colorBorder: {
+    width: 54,
+    height: 54,
+    borderRadius: 27,
+    justifyContent: "center",
+    alignItems: "center",
+    margin: 5,
+  },
+  selectColorItem: {
+    justifyContent: "center",
+    alignItems: "center",
+    padding: 5,
+  },
+  selectColorContainer: {
+    width: "100%",
+    paddingVertical: 10,
+    flexDirection: "row",
+    justifyContent: "space-evenly",
+  },
 });
 
 const customBorder1 = {
-  borderColor: Colors.dodgerBlue,
+  borderColor: "#6a5acd",
   borderStyle: "solid",
   borderWidth: 3,
 };
@@ -187,4 +273,16 @@ const customBorder2 = {
   borderColor: Colors.lightGrey,
   borderStyle: "solid",
   borderWidth: 1,
+};
+
+const customBorder11 = {
+  borderColor: "#6a5acd",
+  borderStyle: "solid",
+  borderWidth: 2,
+};
+
+const customBorder22 = {
+  borderColor: Colors.lightGrey,
+  borderStyle: "solid",
+  borderWidth: 0,
 };
