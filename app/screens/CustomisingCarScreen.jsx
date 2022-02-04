@@ -6,19 +6,24 @@ import {
   Text,
   View,
   TouchableWithoutFeedback,
+  TouchableOpacity,
+  StatusBar,
 } from "react-native";
 import React, { useState } from "react";
-import { useNavigation } from "@react-navigation/native";
+import { useNavigation, useRoute } from "@react-navigation/native";
 
 import Colors from "../colors/Colors";
 import Changer from "../components/Changer";
 import { Ionicons } from "@expo/vector-icons";
 import SelectModel from "../components/SelectModel";
+import AppButton from "../components/AppButton";
 
 const CustomisingCarScreen = () => {
   const navigation = useNavigation();
+  const route = useRoute();
 
   const [selectedItem, setSelectedItem] = useState(1);
+  const [autopilot, setAutopilot] = useState(true);
   const [selectedColorItem, setSelectedColorItem] = useState(1);
   const [selectedWheelItem, setSelectedWheelItem] = useState(1);
 
@@ -45,6 +50,98 @@ const CustomisingCarScreen = () => {
         </View>
         <Changer title1={"Purchase Value"} title2={"Potential Savings*"} />
         <SelectModel one={340} two={60} three={5.4} />
+
+        <Text style={styles.colorText}>Select Wheel</Text>
+        <View style={styles.selectColorContainer}>
+          <View style={styles.selectColorItem}>
+            <TouchableWithoutFeedback onPress={() => setSelectedWheelItem(1)}>
+              <View
+                style={[
+                  styles.colorBorder,
+                  selectedWheelItem === 1 ? customBorder11 : customBorder22,
+                ]}
+              >
+                <View style={styles.actualColor}>
+                  <Image
+                    source={{
+                      uri: "https://static-assets.tesla.com/share/tesla_design_studio_assets/MODEL3/UI/option-wheels-18-aero.png?&version=v0028d202202030409",
+                    }}
+                    style={styles.wheelImage}
+                  />
+                </View>
+              </View>
+            </TouchableWithoutFeedback>
+            <Text style={styles.colorPrice}>$1500</Text>
+          </View>
+          <View style={styles.selectColorItem}>
+            <TouchableWithoutFeedback onPress={() => setSelectedWheelItem(2)}>
+              <View
+                style={[
+                  styles.colorBorder,
+                  selectedWheelItem === 2 ? customBorder11 : customBorder22,
+                ]}
+              >
+                <View style={styles.actualColor}>
+                  <Image
+                    source={{
+                      uri: "https://static-assets.tesla.com/share/tesla_design_studio_assets/MODEL3/UI/option-wheels-19-sport.png?&version=v0028d202202030409",
+                    }}
+                    style={styles.wheelImage}
+                  />
+                </View>
+              </View>
+            </TouchableWithoutFeedback>
+            <Text style={styles.colorPrice}>$1500</Text>
+          </View>
+        </View>
+        <Text style={styles.colorText}>Select Color</Text>
+        <View style={styles.selectColorContainer}>
+          <View style={styles.selectColorItem}>
+            <TouchableWithoutFeedback onPress={() => setSelectedColorItem(1)}>
+              <View
+                style={[
+                  styles.colorBorder,
+                  selectedColorItem === 1 ? customBorder11 : customBorder22,
+                ]}
+              >
+                <View
+                  style={[styles.actualColor, { backgroundColor: "#C0C0C0" }]}
+                />
+              </View>
+            </TouchableWithoutFeedback>
+            <Text style={styles.colorPrice}>$1500</Text>
+          </View>
+          <View style={styles.selectColorItem}>
+            <TouchableWithoutFeedback onPress={() => setSelectedColorItem(2)}>
+              <View
+                style={[
+                  styles.colorBorder,
+                  selectedColorItem === 2 ? customBorder11 : customBorder22,
+                ]}
+              >
+                <View
+                  style={[styles.actualColor, { backgroundColor: "#a62c2b" }]}
+                />
+              </View>
+            </TouchableWithoutFeedback>
+            <Text style={styles.colorPrice}>$1500</Text>
+          </View>
+          <View style={styles.selectColorItem}>
+            <TouchableWithoutFeedback onPress={() => setSelectedColorItem(3)}>
+              <View
+                style={[
+                  styles.colorBorder,
+                  selectedColorItem === 3 ? customBorder11 : customBorder22,
+                ]}
+              >
+                <View
+                  style={[styles.actualColor, { backgroundColor: "#2C2C2B" }]}
+                />
+              </View>
+            </TouchableWithoutFeedback>
+            <Text style={styles.colorPrice}>$1500</Text>
+          </View>
+        </View>
         <View style={styles.selectModelContainer}>
           <View style={styles.selectModelItem}>
             <Text style={styles.selectModelItemTitle}>Title 1</Text>
@@ -101,97 +198,54 @@ const CustomisingCarScreen = () => {
             </TouchableWithoutFeedback>
           </View>
         </View>
-        <Text style={styles.colorText}>Select Color</Text>
-        <View style={styles.selectColorContainer}>
-          <View style={styles.selectColorItem}>
-            <TouchableWithoutFeedback onPress={() => setSelectedColorItem(1)}>
-              <View
-                style={[
-                  styles.colorBorder,
-                  selectedColorItem === 1 ? customBorder11 : customBorder22,
-                ]}
-              >
-                <View
-                  style={[styles.actualColor, { backgroundColor: "#C0C0C0" }]}
-                />
-              </View>
-            </TouchableWithoutFeedback>
-            <Text style={styles.colorPrice}>$1500</Text>
-          </View>
-          <View style={styles.selectColorItem}>
-            <TouchableWithoutFeedback onPress={() => setSelectedColorItem(2)}>
-              <View
-                style={[
-                  styles.colorBorder,
-                  selectedColorItem === 2 ? customBorder11 : customBorder22,
-                ]}
-              >
-                <View
-                  style={[styles.actualColor, { backgroundColor: "#a62c2b" }]}
-                />
-              </View>
-            </TouchableWithoutFeedback>
-            <Text style={styles.colorPrice}>$1500</Text>
-          </View>
-          <View style={styles.selectColorItem}>
-            <TouchableWithoutFeedback onPress={() => setSelectedColorItem(3)}>
-              <View
-                style={[
-                  styles.colorBorder,
-                  selectedColorItem === 3 ? customBorder11 : customBorder22,
-                ]}
-              >
-                <View
-                  style={[styles.actualColor, { backgroundColor: "#2C2C2B" }]}
-                />
-              </View>
-            </TouchableWithoutFeedback>
-            <Text style={styles.colorPrice}>$1500</Text>
-          </View>
-        </View>
-        <Text style={styles.colorText}>Select Wheel</Text>
-        <View style={styles.selectColorContainer}>
-          <View style={styles.selectColorItem}>
-            <TouchableWithoutFeedback onPress={() => setSelectedWheelItem(1)}>
-              <View
-                style={[
-                  styles.colorBorder,
-                  selectedWheelItem === 1 ? customBorder11 : customBorder22,
-                ]}
-              >
-                <View style={styles.actualColor}>
-                  <Image
-                    source={{
-                      uri: "https://static-assets.tesla.com/share/tesla_design_studio_assets/MODEL3/UI/option-wheels-18-aero.png?&version=v0028d202202030409",
-                    }}
-                    style={styles.wheelImage}
-                  />
-                </View>
-              </View>
-            </TouchableWithoutFeedback>
-            <Text style={styles.colorPrice}>$1500</Text>
-          </View>
-          <View style={styles.selectColorItem}>
-            <TouchableWithoutFeedback onPress={() => setSelectedWheelItem(2)}>
-              <View
-                style={[
-                  styles.colorBorder,
-                  selectedWheelItem === 2 ? customBorder11 : customBorder22,
-                ]}
-              >
-                <View style={styles.actualColor}>
-                  <Image
-                    source={{
-                      uri: "https://static-assets.tesla.com/share/tesla_design_studio_assets/MODEL3/UI/option-wheels-19-sport.png?&version=v0028d202202030409",
-                    }}
-                    style={styles.wheelImage}
-                  />
-                </View>
-              </View>
-            </TouchableWithoutFeedback>
-            <Text style={styles.colorPrice}>$1500</Text>
-          </View>
-        </View>
+
+        <Text style={styles.colorText}>Autopilot</Text>
+        <TouchableOpacity
+          style={[styles.autopilotContainer]}
+          onPress={() => setAutopilot(!autopilot)}
+        >
+          <Text
+            style={{
+              fontSize: 14,
+              fontWeight: "bold",
+              letterSpacing: 0.5,
+              marginRight: 100,
+            }}
+          >
+            Include Autopilot
+          </Text>
+          {autopilot && (
+            <Ionicons name="checkmark-circle-sharp" size={24} color="#6a5acd" />
+          )}
+        </TouchableOpacity>
+        <Text
+          style={{
+            fontSize: 20,
+            fontWeight: "bold",
+            letterSpacing: 0.5,
+            marginTop: 70,
+            color: Colors.black,
+          }}
+        >
+          Order Your {route.params.name}
+        </Text>
+        <Text
+          style={{
+            fontSize: 14,
+            fontWeight: "bold",
+            color: Colors.buttonPrimary,
+            letterSpacing: 0.5,
+            paddingVertical: 15,
+          }}
+        >
+          Your total billing: $435,000
+        </Text>
+        <AppButton
+          bgColor={Colors.buttonPrimary}
+          title={"Proceed for order"}
+          color={Colors.white}
+          onPress={() => console.log("ordered")}
+        />
       </View>
     </ScrollView>
   );
@@ -200,6 +254,17 @@ const CustomisingCarScreen = () => {
 export default CustomisingCarScreen;
 
 const styles = StyleSheet.create({
+  autopilotContainer: {
+    marginTop: 20,
+    height: 50,
+    width: 300,
+    paddingHorizontal: 30,
+    paddingVertical: 10,
+    backgroundColor: Colors.buttonSecondary,
+    flexDirection: "row",
+    alignItems: "center",
+    borderRadius: 10,
+  },
   back: {
     position: "absolute",
     left: 20,
@@ -251,11 +316,10 @@ const styles = StyleSheet.create({
     paddingVertical: 10,
     paddingHorizontal: 20,
     flexDirection: "row",
-    borderWidth: 2,
-    borderStyle: "solid",
-    borderRadius: 100,
+    borderRadius: 10,
     justifyContent: "space-between",
     marginTop: 10,
+    backgroundColor: Colors.buttonSecondary,
   },
   selectModelItemValueTitle: {
     fontSize: 15,
@@ -272,6 +336,7 @@ const styles = StyleSheet.create({
     fontWeight: "bold",
     letterSpacing: 0.5,
     paddingTop: 30,
+    color: Colors.buttonPrimary,
   },
   colorPrice: {
     fontSize: 14,
@@ -313,13 +378,10 @@ const customBorder1 = {
   borderColor: "#6a5acd",
   borderStyle: "solid",
   borderWidth: 3,
+  backgroundColor: Colors.white,
 };
 
-const customBorder2 = {
-  borderColor: Colors.lightGrey,
-  borderStyle: "solid",
-  borderWidth: 0.5,
-};
+const customBorder2 = {};
 
 const customBorder11 = {
   borderColor: "#6a5acd",
