@@ -34,15 +34,15 @@ const learnMoreScreenData = {
     specs: {
       part1: [
         { name: "Battery", value: "Long Range" },
-        { name: "Acceleration", value: "3.1s 0-60 mph*" },
-        { name: "Range", value: "315 miles (EPA est.)" },
+        { name: "Acceleration", value: "3.5s 0-60 mph*" },
+        { name: "Range", value: "303 miles (EPA est.)" },
         { name: "Drive", value: "Dual Motor All-Wheel Drive" },
-        { name: "Seating", value: "5 Adults" },
-        { name: "Wheels", value: '20"' },
-        { name: "Weight", value: "4,065 lbs" },
+        { name: "Seating", value: "Up to 5" },
+        { name: "Wheels", value: '21"' },
+        { name: "Weight", value: "4,416 lbs" },
       ],
       part2: [
-        { name: "Cargo", value: "23 cu ft" },
+        { name: "Cargo", value: "76 cu ft" },
         { name: "Displays", value: '15" Center Touchscreen' },
         {
           name: "Supercharging/Payment Type",
@@ -63,15 +63,15 @@ const learnMoreScreenData = {
     specs: {
       part1: [
         { name: "Battery", value: "Long Range" },
-        { name: "Acceleration", value: "3.1s 0-60 mph*" },
-        { name: "Range", value: "315 miles (EPA est.)" },
+        { name: "Acceleration", value: "1.99s 0-60 mph*" },
+        { name: "Range", value: "405 miles (EPA est.)" },
         { name: "Drive", value: "Dual Motor All-Wheel Drive" },
         { name: "Seating", value: "5 Adults" },
         { name: "Wheels", value: '20"' },
-        { name: "Weight", value: "4,065 lbs" },
+        { name: "Weight", value: "4,766 lbs" },
       ],
       part2: [
-        { name: "Cargo", value: "23 cu ft" },
+        { name: "Cargo", value: "28 cu ft" },
         { name: "Displays", value: '15" Center Touchscreen' },
         {
           name: "Supercharging/Payment Type",
@@ -92,19 +92,19 @@ const learnMoreScreenData = {
     specs: {
       part1: [
         { name: "Battery", value: "Long Range" },
-        { name: "Acceleration", value: "3.1s 0-60 mph*" },
-        { name: "Range", value: "315 miles (EPA est.)" },
+        { name: "Acceleration", value: "2.5s 0-60 mph*" },
+        { name: "Range", value: "333 miles (EPA est.)" },
         { name: "Drive", value: "Dual Motor All-Wheel Drive" },
-        { name: "Seating", value: "5 Adults" },
-        { name: "Wheels", value: '20"' },
+        { name: "Top Speed", value: "163 mph" },
+        { name: "Wheels", value: '20" or 22"' },
         { name: "Weight", value: "4,065 lbs" },
       ],
       part2: [
-        { name: "Cargo", value: "23 cu ft" },
+        { name: "Cargo", value: "28 cu ft" },
         { name: "Displays", value: '15" Center Touchscreen' },
         {
           name: "Supercharging/Payment Type",
-          value: "250 kW max; Pay Per Use",
+          value: "260 kW max; Pay Per Use",
         },
         { name: "Onboard Charger Max", value: "11.5 kW max (48A)" },
         {

@@ -28,7 +28,7 @@ const styles = StyleSheet.create({
   container: {
     width: "100%",
     alignItems: "center",
-    marginTop: 20,
+    marginTop: 15,
   },
   menuContainer: {
     width: "90%",
