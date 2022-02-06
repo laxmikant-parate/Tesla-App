@@ -15,7 +15,11 @@ const StackNavigator = () => (
   <Stack.Navigator screenOptions={{ headerShown: false }}>
     <Stack.Screen name="HomeScreen" component={HomeScreen} />
     <Stack.Screen name="AboutMeScreen" component={AboutMeScreen} />
-    <Stack.Screen name="PaymentScreen" component={PaymentScreen} />
+    <Stack.Screen
+      name="PaymentScreen"
+      component={PaymentScreen}
+      options={{ headerShown: true, title: "Shipping Details" }}
+    />
     <Stack.Screen name="LearnMoreScreen" component={LearnMoreScreen} />
     <Stack.Screen name="LoginSignUpScreen" component={LoginSignUpScreen} />
     <Stack.Screen

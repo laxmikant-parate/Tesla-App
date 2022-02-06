@@ -264,7 +264,7 @@ const CustomisingCarScreen = () => {
                   ]}
                 >
                   <Text style={styles.selectModelItemValueTitle}>
-                    {route.params.name + "Long Range"}
+                    {route.params.name + " Long Range"}
                   </Text>
                   <Text style={styles.selectModelItemValueSubtitle}>
                     {"$" + data[display][2]}
@@ -282,7 +282,7 @@ const CustomisingCarScreen = () => {
                   ]}
                 >
                   <Text style={styles.selectModelItemValueTitle}>
-                    {route.params.name + "Performance"}
+                    {route.params.name + " Performance"}
                   </Text>
                   <Text style={styles.selectModelItemValueSubtitle}>
                     {"$" + data[display][3]}
@@ -340,7 +340,7 @@ const CustomisingCarScreen = () => {
             bgColor={Colors.buttonPrimary}
             title={"Proceed for order"}
             color={Colors.white}
-            onPress={() => console.log("ordered")}
+            onPress={() => navigation.navigate("PaymentScreen")}
           />
         </View>
       </ScrollView>
