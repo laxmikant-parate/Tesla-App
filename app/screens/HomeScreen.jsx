@@ -5,6 +5,7 @@ import { logo } from "../api/homeScreenData";
 import { Fontisto } from "@expo/vector-icons";
 import CarItemList from "../components/CarItemList";
 import { useNavigation } from "@react-navigation/native";
+import Colors from "../colors/Colors";
 
 const HomeScreen = () => {
   const navigation = useNavigation();
@@ -18,9 +19,9 @@ const HomeScreen = () => {
         resizeMode="contain"
       />
       <Fontisto
-        name="tesla"
+        name="person"
         size={24}
-        color="black"
+        color={Colors.buttonPrimary}
         style={styles.teslaLogo}
         onPress={() => navigation.push("AboutMeScreen")}
       />

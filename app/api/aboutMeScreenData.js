@@ -10,6 +10,13 @@ const aboutMeScreenData = {
   resume: "https://cdn-icons-png.flaticon.com/512/942/942748.png",
   achievement:
     "https://cdn-icons.flaticon.com/png/512/4412/premium/4412768.png?token=exp=1644245147~hmac=0264e10b532eb5ee4874be0736636d4d",
+  linkedin:
+    "https://cdn-icons.flaticon.com/png/512/3938/premium/3938044.png?token=exp=1644256017~hmac=3ecd9ee5c5611f6fabb29f1dff0009b0",
+  gfg: "https://upload.wikimedia.org/wikipedia/commons/thumb/4/43/GeeksforGeeks.svg/2560px-GeeksforGeeks.svg.png",
+  leetcode:
+    "https://upload.wikimedia.org/wikipedia/commons/1/19/LeetCode_logo_black.png",
+  fb: "https://cdn-icons-png.flaticon.com/512/733/733547.png",
+  insta: "https://cdn-icons-png.flaticon.com/512/174/174855.png",
 };
 
 export default aboutMeScreenData;

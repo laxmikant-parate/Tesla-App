@@ -6,6 +6,8 @@ import {
   View,
   StatusBar,
   FlatList,
+  Linking,
+  TouchableOpacity,
 } from "react-native";
 import React from "react";
 import { useNavigation } from "@react-navigation/native";
@@ -15,6 +17,10 @@ import Colors from "../colors/Colors";
 import aboutMeScreenData from "../api/aboutMeScreenData";
 import AboutMeItem from "../components/AboutMeItem";
 import SkillItem from "../components/SkillItem";
+import { AntDesign } from "@expo/vector-icons";
+import { FontAwesome5 } from "@expo/vector-icons";
+import { MaterialIcons } from "@expo/vector-icons";
+import { Fontisto } from "@expo/vector-icons";
 
 const skills = [
   { name: "C++" },
@@ -38,16 +44,120 @@ const AboutMeScreen = () => {
         style={styles.backIcon}
         onPress={() => navigation.pop()}
       />
-      <View style={styles.topDesign}></View>
-      <Image
-        source={{
-          uri: aboutMeScreenData.url,
-        }}
-        style={styles.profilePic}
-      />
+      <View style={styles.bottomDesign}>
+        <View style={styles.linkRowContainer}>
+          <TouchableOpacity
+            onPress={() => {
+              Linking.openURL(
+                "https://auth.geeksforgeeks.org/user/laxmikantparate01/profile"
+              ).catch((error) => alert(error));
+            }}
+          >
+            <Image
+              source={{ uri: aboutMeScreenData.gfg }}
+              style={styles.link}
+              resizeMode="contain"
+            />
+          </TouchableOpacity>
+          <TouchableOpacity
+            onPress={() => {
+              Linking.openURL("https://leetcode.com/Laxmikant01").catch(
+                (error) => alert(error)
+              );
+            }}
+          >
+            <Image
+              source={{ uri: aboutMeScreenData.leetcode }}
+              style={styles.link}
+              resizeMode="contain"
+            />
+          </TouchableOpacity>
+          <TouchableOpacity
+            onPress={() => {
+              Linking.openURL(
+                "https://github.com/Laxmikant-Rajkapoor-Parate/"
+              ).catch((error) => alert(error));
+            }}
+          >
+            <AntDesign
+              name="github"
+              size={26}
+              color="black"
+              style={{ marginHorizontal: 10 }}
+            />
+          </TouchableOpacity>
+          <TouchableOpacity
+            onPress={() => {
+              Linking.openURL(
+                "https://www.linkedin.com/in/laxmikant-parate-10075a191"
+              ).catch((error) => alert(error));
+            }}
+          >
+            <Image
+              source={{ uri: aboutMeScreenData.linkedin }}
+              style={styles.link2}
+              resizeMode="contain"
+            />
+          </TouchableOpacity>
+          <TouchableOpacity
+            onPress={() => {
+              Linking.openURL(
+                "https://www.facebook.com/laxmikant.parate.33"
+              ).catch((error) => alert(error));
+            }}
+          >
+            <Image
+              source={{ uri: aboutMeScreenData.fb }}
+              style={styles.link2}
+              resizeMode="contain"
+            />
+          </TouchableOpacity>
+          <TouchableOpacity
+            onPress={() => {
+              Linking.openURL(
+                "https://www.instagram.com/laxmikant.parate"
+              ).catch((error) => alert(error));
+            }}
+          >
+            <Image
+              source={{ uri: aboutMeScreenData.insta }}
+              style={styles.link2}
+              resizeMode="contain"
+            />
+          </TouchableOpacity>
+        </View>
+      </View>
+      <View style={styles.imageContainer}>
+        <View style={{ width: "85%", paddingLeft: "33%" }}>
+          <Image
+            source={{
+              uri: aboutMeScreenData.url,
+            }}
+            style={styles.profilePic}
+          />
+        </View>
+        <View style={styles.iconContainer}>
+          <Fontisto
+            name="mobile-alt"
+            size={24}
+            color={Colors.buttonPrimary}
+            style={{ marginVertical: 5 }}
+            onPress={() => Linking.openURL("tel:+917030083767")}
+          />
+          <MaterialIcons
+            name="attach-email"
+            size={24}
+            color={Colors.buttonPrimary}
+            style={{ marginVertical: 5 }}
+            onPress={() =>
+              Linking.openURL("mailto:laxmikantparate01@gmail.com")
+            }
+          />
+        </View>
+      </View>
       <AboutMeItem
         image={aboutMeScreenData.hi}
-        title={"Hey folks, I'm "}
+        title={"Hey folk, I'm "}
         cite={"Laxmikant Parate"}
       />
       <AboutMeItem
@@ -56,8 +166,13 @@ const AboutMeScreen = () => {
         cite={"3rd Yr, IT"}
       />
       <AboutMeItem
+        image={aboutMeScreenData.location}
+        title={"Nagpur, Maharashtra,"}
+        cite={" India"}
+      />
+      <AboutMeItem
         image={aboutMeScreenData.achievement}
-        title={"Good with "}
+        title={"Handson with "}
         cite={"DSA, Problem Solving"}
       />
       <AboutMeItem
@@ -113,25 +228,44 @@ const styles = StyleSheet.create({
     top: 40,
     left: 20,
   },
-  topDesign: {
+  bottomDesign: {
     width: "100%",
-    height: "30%",
-    backgroundColor: "lightgreen",
-    borderTopLeftRadius: 200,
-    borderTopRightRadius: 200,
+    backgroundColor: Colors.buttonSecondary,
+    borderTopLeftRadius: 40,
+    borderTopRightRadius: 40,
     position: "absolute",
     bottom: 0,
+    paddingVertical: 20,
+    alignItems: "center",
   },
+  linkRowContainer: {
+    flexDirection: "row",
+    alignItems: "center",
+  },
+  link: { width: 30, height: 30, marginHorizontal: 10 },
+  link2: { width: 25, height: 25, marginHorizontal: 10 },
   profilePic: {
     width: 120,
     height: 120,
     borderRadius: 60,
-    marginBottom: 15,
   },
   skillContainer: {
     marginTop: 15,
     width: "100%",
     justifyContent: "center",
     alignItems: "center",
+  },
+  imageContainer: {
+    paddingVertical: 20,
+    width: "100%",
+    flexDirection: "row",
+  },
+  iconContainer: {
+    backgroundColor: Colors.buttonSecondary,
+    width: "15%",
+    justifyContent: "center",
+    alignItems: "center",
+    borderTopLeftRadius: 40,
+    borderBottomLeftRadius: 40,
   },
 });
