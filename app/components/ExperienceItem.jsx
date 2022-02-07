@@ -4,10 +4,12 @@ import React from "react";
 import Colors from "../colors/Colors";
 import AppButton from "../components/AppButton";
 import { Fontisto } from "@expo/vector-icons";
-import { useRoute } from "@react-navigation/native";
+import { useRoute, useNavigation } from "@react-navigation/native";
 
-const ExperienceItem = ({ url }) => {
+const ExperienceItem = ({ url, name, id }) => {
   const route = useRoute();
+  const navigation = useNavigation();
+
   return (
     <View style={styles.experienceContainer}>
       <Text style={styles.experienceText}>Experience {route.params.name}</Text>
@@ -18,11 +20,20 @@ const ExperienceItem = ({ url }) => {
         style={styles.experienceImage}
         resizeMode="contain"
       />
-      <AppButton title={"order now"} bgColor={"#262626"} color={Colors.white} />
+      <AppButton
+        title={"order now"}
+        bgColor={"#262626"}
+        color={Colors.white}
+        onPress={() => {
+          navigation.pop();
+          navigation.push("CustomisingCarScreen", { name, id });
+        }}
+      />
       <AppButton
         title={"see other cars"}
         bgColor={"#262626"}
         color={Colors.white}
+        onPress={() => navigation.pop()}
       />
 
       <View style={styles.dummy}>

@@ -116,11 +116,10 @@ const styles = StyleSheet.create({
   map: {
     marginTop: 20,
     width: "100%",
-    height: 200,
+    height: 250,
   },
   title: {
-    fontSize: 14,
-    fontWeight: "bold",
+    fontSize: 12,
     color: Colors.buttonPrimary,
     paddingVertical: 5,
     paddingHorizontal: 10,

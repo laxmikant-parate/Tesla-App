@@ -7,7 +7,6 @@ import HomeScreen from "./app/screens/HomeScreen";
 import AboutMeScreen from "./app/screens/AboutMeScreen";
 import PaymentScreen from "./app/screens/PaymentScreen";
 import LearnMoreScreen from "./app/screens/LearnMoreScreen";
-import LoginSignUpScreen from "./app/screens/LoginSignUpScreen";
 import CustomisingCarScreen from "./app/screens/CustomisingCarScreen";
 
 const Stack = createStackNavigator();
@@ -21,7 +20,6 @@ const StackNavigator = () => (
       options={{ headerShown: true, title: "Shipping Details" }}
     />
     <Stack.Screen name="LearnMoreScreen" component={LearnMoreScreen} />
-    <Stack.Screen name="LoginSignUpScreen" component={LoginSignUpScreen} />
     <Stack.Screen
       name="CustomisingCarScreen"
       component={CustomisingCarScreen}

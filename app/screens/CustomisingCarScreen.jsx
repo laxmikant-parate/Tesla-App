@@ -445,7 +445,6 @@ const styles = StyleSheet.create({
     fontSize: 14,
     fontWeight: "bold",
     letterSpacing: 0.5,
-    color: Colors.buttonPrimary,
   },
   actualColor: {
     width: 40,

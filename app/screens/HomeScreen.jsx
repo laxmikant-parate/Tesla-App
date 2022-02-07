@@ -4,8 +4,11 @@ import { Image, StyleSheet } from "react-native";
 import { logo } from "../api/homeScreenData";
 import { Fontisto } from "@expo/vector-icons";
 import CarItemList from "../components/CarItemList";
+import { useNavigation } from "@react-navigation/native";
 
 const HomeScreen = () => {
+  const navigation = useNavigation();
+
   return (
     <>
       <CarItemList />
@@ -14,7 +17,13 @@ const HomeScreen = () => {
         style={styles.teslaName}
         resizeMode="contain"
       />
-      <Fontisto name="tesla" size={24} color="black" style={styles.teslaLogo} />
+      <Fontisto
+        name="tesla"
+        size={24}
+        color="black"
+        style={styles.teslaLogo}
+        onPress={() => navigation.push("AboutMeScreen")}
+      />
     </>
   );
 };

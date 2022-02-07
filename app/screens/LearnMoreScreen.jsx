@@ -17,8 +17,8 @@ import { Ionicons } from "@expo/vector-icons";
 import ExperienceItem from "../components/ExperienceItem";
 
 const LearnMoreScreen = () => {
-  const navigation = useNavigation();
   const route = useRoute();
+  const navigation = useNavigation();
 
   return (
     <>
@@ -53,7 +53,11 @@ const LearnMoreScreen = () => {
               </View>
             </View>
           </View>
-          <ExperienceItem url={learnMoreScreenData[route.params.id].url2} />
+          <ExperienceItem
+            url={learnMoreScreenData[route.params.id].url2}
+            name={route.params.name}
+            id={route.params.id}
+          />
         </View>
       </ScrollView>
     </>
