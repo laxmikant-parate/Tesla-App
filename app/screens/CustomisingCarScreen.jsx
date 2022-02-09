@@ -1,5 +1,4 @@
 import {
-  Button,
   Image,
   ScrollView,
   StyleSheet,
@@ -9,10 +8,11 @@ import {
   TouchableOpacity,
   StatusBar,
 } from "react-native";
-import React, { useState } from "react";
+import { useState } from "react";
 import { useNavigation, useRoute } from "@react-navigation/native";
 
 import Colors from "../colors/Colors";
+import { getAuth } from "firebase/auth";
 import { Ionicons } from "@expo/vector-icons";
 import AppButton from "../components/AppButton";
 import SelectModel from "../components/SelectModel";
@@ -340,7 +340,13 @@ const CustomisingCarScreen = () => {
             bgColor={Colors.buttonPrimary}
             title={"Proceed for order"}
             color={Colors.white}
-            onPress={() => navigation.navigate("PaymentScreen")}
+            onPress={() => {
+              if (getAuth().currentUser) {
+                navigation.push("PaymentScreen");
+              } else {
+                navigation.navigate("LoginSignupScreen");
+              }
+            }}
           />
         </View>
       </ScrollView>

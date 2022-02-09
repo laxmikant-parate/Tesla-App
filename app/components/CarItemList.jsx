@@ -1,4 +1,3 @@
-import React from "react";
 import { FlatList, StyleSheet, Dimensions } from "react-native";
 
 import CarItem from "./CarItem";

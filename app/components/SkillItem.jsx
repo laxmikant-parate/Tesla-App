@@ -1,6 +1,5 @@
-import { StyleSheet, Text, View } from "react-native";
-import React from "react";
 import Colors from "../colors/Colors";
+import { StyleSheet, Text, View } from "react-native";
 
 const SkillItem = ({ name }) => {
   return (

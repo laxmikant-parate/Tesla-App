@@ -1,11 +1,10 @@
-import React from "react";
 import { Image, StyleSheet } from "react-native";
 
+import Colors from "../colors/Colors";
 import { logo } from "../api/homeScreenData";
 import { Fontisto } from "@expo/vector-icons";
 import CarItemList from "../components/CarItemList";
 import { useNavigation } from "@react-navigation/native";
-import Colors from "../colors/Colors";
 
 const HomeScreen = () => {
   const navigation = useNavigation();

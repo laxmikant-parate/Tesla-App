@@ -1,10 +1,13 @@
-import React from "react";
-import { StyleSheet, Text, TextInput, View } from "react-native";
-
-import { Octicons } from "@expo/vector-icons";
 import Colors from "../colors/Colors";
+import { StyleSheet, TextInput, View } from "react-native";
 
-const AppInput = ({ placeholder, icon, keyboardType, onChangeText }) => {
+const AppInput = ({
+  placeholder,
+  icon,
+  keyboardType,
+  onChangeText,
+  secureTextEntry,
+}) => {
   return (
     <View style={styles.container}>
       {icon}
@@ -13,6 +16,7 @@ const AppInput = ({ placeholder, icon, keyboardType, onChangeText }) => {
         placeholder={placeholder}
         keyboardType={keyboardType}
         onChangeText={onChangeText}
+        secureTextEntry={secureTextEntry}
       />
     </View>
   );

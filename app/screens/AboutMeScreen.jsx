@@ -1,15 +1,12 @@
 import {
-  Button,
   StyleSheet,
   Image,
-  Text,
   View,
   StatusBar,
   FlatList,
   Linking,
   TouchableOpacity,
 } from "react-native";
-import React from "react";
 import { useNavigation } from "@react-navigation/native";
 
 import { Ionicons } from "@expo/vector-icons";
@@ -18,7 +15,6 @@ import aboutMeScreenData from "../api/aboutMeScreenData";
 import AboutMeItem from "../components/AboutMeItem";
 import SkillItem from "../components/SkillItem";
 import { AntDesign } from "@expo/vector-icons";
-import { FontAwesome5 } from "@expo/vector-icons";
 import { MaterialIcons } from "@expo/vector-icons";
 import { Fontisto } from "@expo/vector-icons";
 
@@ -189,6 +185,11 @@ const AboutMeScreen = () => {
         image={aboutMeScreenData.resume}
         title={"Have a look at my "}
         cite={"Resume"}
+        onPress={() =>
+          Linking.openURL(
+            "https://drive.google.com/file/d/10Pg0CQH7CbgaWV_Lmo2qEuj0DGDnvHRy/view?usp=sharing"
+          )
+        }
       />
       <View style={styles.skillContainer}>
         <FlatList

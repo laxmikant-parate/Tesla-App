@@ -1,19 +1,11 @@
-import React, { useEffect, useState } from "react";
 import {
-  Alert,
-  Button,
-  Dimensions,
-  ScrollView,
-  StyleSheet,
   Text,
-  TouchableOpacity,
-  TouchableWithoutFeedback,
   View,
+  Dimensions,
+  StyleSheet,
+  TouchableOpacity,
 } from "react-native";
-import * as Location from "expo-location";
 import MapView, { Marker } from "react-native-maps";
-import * as Network from "expo-network";
-import ConnectivityManager from "react-native-connectivity-status";
 
 import { useNavigation } from "@react-navigation/native";
 import AppInput from "../components/AppInput";
@@ -26,6 +18,7 @@ import { Feather } from "@expo/vector-icons";
 
 const PaymentScreen = () => {
   const location = useLocation();
+  const navigation = useNavigation();
 
   return (
     <View style={styles.container}>
@@ -95,7 +88,10 @@ const PaymentScreen = () => {
       />
       <TouchableOpacity
         style={styles.redirect}
-        onPress={() => console.log("clicked")}
+        onPress={() => {
+          navigation.pop();
+          navigation.pop();
+        }}
       >
         <Text style={styles.redirectText}>Look for other options</Text>
         <Feather name="external-link" size={24} color={Colors.buttonPrimary} />

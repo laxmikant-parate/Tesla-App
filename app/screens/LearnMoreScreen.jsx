@@ -1,12 +1,4 @@
-import React from "react";
-import {
-  StyleSheet,
-  Text,
-  View,
-  Image,
-  Dimensions,
-  ImageBackground,
-} from "react-native";
+import { StyleSheet, Text, View, Image, Dimensions } from "react-native";
 import { useNavigation, useRoute } from "@react-navigation/native";
 
 import learnMoreScreenData from "../api/learnMoreScreenData";

@@ -1,10 +1,9 @@
-import React from "react";
-import { Image, StyleSheet, Text, TouchableOpacity, View } from "react-native";
 import Colors from "../colors/Colors";
+import { Image, StyleSheet, Text, TouchableOpacity } from "react-native";
 
-const AboutMeItem = ({ image, title, cite }) => {
+const AboutMeItem = ({ image, title, cite, onPress }) => {
   return (
-    <TouchableOpacity style={styles.container}>
+    <TouchableOpacity style={styles.container} onPress={onPress}>
       <Image source={{ uri: image }} style={styles.logo} />
       <Text style={styles.title}>{title}</Text>
       <Text style={styles.cited}>{cite}</Text>
@@ -17,9 +16,9 @@ export default AboutMeItem;
 const styles = StyleSheet.create({
   container: {
     width: "80%",
+    paddingVertical: 5,
     flexDirection: "row",
     alignItems: "center",
-    paddingVertical: 5,
     paddingHorizontal: 10,
   },
   logo: {

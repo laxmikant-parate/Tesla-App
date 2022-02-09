@@ -1,6 +1,5 @@
-import React from "react";
-import { StyleSheet, Text, View } from "react-native";
 import Colors from "../colors/Colors";
+import { StyleSheet, Text, View } from "react-native";
 
 const SelectModel = ({ one, two, three }) => {
   return (

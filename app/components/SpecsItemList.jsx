@@ -1,5 +1,4 @@
-import React from "react";
-import { FlatList, StyleSheet } from "react-native";
+import { FlatList } from "react-native";
 import Seperator from "./Seperator";
 import SpecsItem from "./SpecsItem";
 
@@ -18,5 +17,3 @@ const SpecsItemList = ({ data }) => {
 };
 
 export default SpecsItemList;
-
-const styles = StyleSheet.create({});

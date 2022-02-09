@@ -1,7 +1,6 @@
-import React from "react";
+import Colors from "../colors/Colors";
 import { StyleSheet, Text, View } from "react-native";
 
-import Colors from "../colors/Colors";
 const SpecsItem = ({ name, value }) => {
   return (
     <View style={styles.container}>
