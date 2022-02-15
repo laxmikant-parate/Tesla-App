@@ -75,7 +75,7 @@ const CustomisingCarScreen = () => {
             <Text style={styles.title}>{route.params.name}</Text>
             <Text style={styles.subtitle}>
               {"Estimated Delivery by " +
-                months[d.getMonth() + 3] +
+                months[(d.getMonth() + 3) % 12] +
                 ", " +
                 d.getFullYear() +
                 "*"}

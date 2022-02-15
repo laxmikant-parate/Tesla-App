@@ -1,9 +1,15 @@
-import { StyleSheet, Text, View, Image, Dimensions } from "react-native";
+import {
+  StyleSheet,
+  Text,
+  View,
+  Image,
+  Dimensions,
+  ScrollView,
+} from "react-native";
 import { useNavigation, useRoute } from "@react-navigation/native";
 
 import learnMoreScreenData from "../api/learnMoreScreenData";
 import SpecsItemList from "../components/SpecsItemList";
-import { ScrollView } from "react-native-gesture-handler";
 import Colors from "../colors/Colors";
 import { Ionicons } from "@expo/vector-icons";
 import ExperienceItem from "../components/ExperienceItem";
