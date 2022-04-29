@@ -6,16 +6,7 @@ import {
   createUserWithEmailAndPassword,
   signInWithEmailAndPassword,
 } from "firebase/auth";
-
-const firebaseConfig = {
-  apiKey: "AIzaSyBB4qTWJGeF04r92JTXiPJWhQ6r7UMJWT8",
-  authDomain: "tesla-app-340514.firebaseapp.com",
-  projectId: "tesla-app-340514",
-  storageBucket: "tesla-app-340514.appspot.com",
-  messagingSenderId: "516867081073",
-  appId: "1:516867081073:web:b0781fe810ea529591acd0",
-  measurementId: "G-MGFBS4X78R",
-};
+import firebaseConfig from "./apiKey";
 
 const Registration = async (email, password) => {
   try {
