@@ -1,3 +1,4 @@
+import { LogBox } from "react-native";
 import { NavigationContainer } from "@react-navigation/native";
 import { createStackNavigator } from "@react-navigation/stack";
 
@@ -10,6 +11,8 @@ import LoginSignupScreen from "./app/screens/LoginSignupScreen";
 
 import { firebaseConfig } from "./auth/firebase";
 import { getApps, initializeApp } from "firebase/app";
+
+LogBox.ignoreAllLogs(true);
 
 const Stack = createStackNavigator();
 const StackNavigator = () => (
