@@ -69,12 +69,12 @@ const PaymentScreen = () => {
         keyboardType={"numeric"}
       />
       {location && (
-        <>
+        <View style={{width: '100%'}}>
           <MapView style={styles.map} region={location}>
             <Marker coordinate={location} title="Marker" />
           </MapView>
           <Text style={styles.title}>*Your Location as detected</Text>
-        </>
+        </View>
       )}
       <AppButton
         title={"checkout"}

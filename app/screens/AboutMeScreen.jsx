@@ -18,15 +18,12 @@ import { AntDesign } from "@expo/vector-icons";
 import { MaterialIcons } from "@expo/vector-icons";
 import { Fontisto } from "@expo/vector-icons";
 
-const skills = [
+const skills1 = [
    { name: "C++" },
    { name: "JavaScript" },
-   { name: "Python" },
-   { name: "Java" },
+   { name: "MySQL" },
 ];
-
-const skills2 = [{ name: "HTML" }, { name: "CSS" }, { name: "MySQL" }];
-const skills3 = [{ name: "ReactJS" }, { name: "React Native" }];
+const skills2 = [{ name: "ReactJS" }, { name: "React Native" }];
 
 const AboutMeScreen = () => {
    const navigation = useNavigation();
@@ -194,19 +191,13 @@ const AboutMeScreen = () => {
          <View style={styles.skillContainer}>
             <FlatList
                horizontal
-               data={skills}
+               data={skills1}
                keyExtractor={({ name }) => name}
                renderItem={({ item }) => <SkillItem name={item.name} />}
             />
             <FlatList
                horizontal
                data={skills2}
-               keyExtractor={({ name }) => name}
-               renderItem={({ item }) => <SkillItem name={item.name} />}
-            />
-            <FlatList
-               horizontal
-               data={skills3}
                keyExtractor={({ name }) => name}
                renderItem={({ item }) => <SkillItem name={item.name} />}
             />
